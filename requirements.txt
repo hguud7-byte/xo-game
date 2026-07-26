@@ -1,3 +1,2 @@
-notepad requirements.txt
-flet
-uvicorn
+flask
+gunicorn
