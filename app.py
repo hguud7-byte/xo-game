@@ -1,2 +1,12 @@
-notepad Renderfile
-config: uvicorn play_xo:app --host 0.0.0.0 --port $PORT
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "<h1>🎮 اللعبة شغالة بنجاح!</h1>"
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
